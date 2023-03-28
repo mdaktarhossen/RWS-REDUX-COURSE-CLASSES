@@ -1,21 +1,24 @@
-import { Provider } from "react-redux";
-import store from "./REDUX/Store";
-import Counter from "./COMPONENTS/Counter";
+import React from 'react';
+import Footer from './COMPONENTS/Footer';
+import Header from './COMPONENTS/Header';
+import Navbar from './COMPONENTS/Navbar';
+import ToDoList from './COMPONENTS/ToDoList';
 
-function App() {
+const App = () => {
   return (
-    <Provider store={store}>
-    <div className="w-screen h-screen p-10 bg-gray-100 text-slate-700">
-      <h1 className="max-w-md mx-auto text-center text-2xl font-bold">
-        Simple Counter Application
-      </h1>
-
-      <div className="max-w-md mx-auto mt-10 space-y-5">
-        <Counter />
+    <body>
+      <div class="grid place-items-center bg-blue-100 h-screen px-6 font-sans">
+        <Navbar />
+        <div class="w-full max-w-3xl shadow-lg rounded-lg p-6 bg-white">
+          <Header />
+          <hr class="mt-4" />
+          <ToDoList />
+          <hr class="mt-4" />
+          <Footer />
+        </div>
       </div>
-    </div>
-    </Provider>
+    </body>
   );
-}
+};
 
 export default App;
